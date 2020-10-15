@@ -5,7 +5,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 const writeFileAsync = util.promisify(fs.writeFile);
-const generate = require("./Develop/generateMarkdown.js");
+const generate = require("./generateMarkdown.js");
 function promptUser() {
   return inquirer.prompt([
     
@@ -57,10 +57,10 @@ promptUser()
   .then(function(response) {
     const md = generate(response);
 
-    return writeFileAsync("readme.md", md);
+    return writeFileAsync("readme2.md", md);
   })
   .then(function() {
-    console.log("Successfully wrote to readme.md");
+    console.log("Successfully wrote to readme2.md");
   })
   .catch(function(err) {
     console.log(err);
