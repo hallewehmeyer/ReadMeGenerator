@@ -12,59 +12,70 @@ function promptUser() {
           {
              type: "input",
              message:"What is the name of your project?",
-             name: "title"
+             name: "Title"
           },
           {
              type: "input",
              message:"Give a brief description of your project.",
-             name: "description"
+             name: "Description"
              
           },
           {
              type: "input",
              message:"How does the user properly launch this app",
-             name: "instillation"
+             name: "Instillation"
           },
           {
              type: "input",
              message:"How would you like your application to be used?",
-             name: "usage"
+             name: "Usage"
           },
           {
              type: "input",
              message:"Were there any liscenses involved in this project?",
-             name: "liscense"
+             name: "Liscense"
           },
           {
              type: "input",
-             message:"We're there other contributers to this project? If so, please include their GitHub usernames.",
-             name: "contributing"
+             message:"We're there other contributors to this project? If so, please include their GitHub usernames.",
+             name: "Contributors"
           },
           {
             type: "input",
             message:"How does the user test this app?",
-            name: "test"
+            name: "Test"
          },
          {
             type: "input",
             message:"Enter your github username and email if users have any questions regarding this application.",
-            name: "questions"
+            name: "Questions"
          },
         ]);
       }
 function generateMarkdown(response, data) {
     return `
 # ${response.title}
-# ${response.description}
+
 # $ Table of Contents
-  -Description
-  -Intstilation
-# ${response.instillation}
-# ${response.usage}
-# ${response.liscends}
-# ${response.contributing}
-# ${response.test}
-# ${response.quetions}
+  -[Description](#description)
+  -[Intstilation](#instilation)
+  -[Usage](#usage)
+  -[Contributors](#contributors)
+  -[Test](#test)
+  -[Questions](#questions)
+# Description
+  -${response.Description}
+# Instilation
+  -${response.Instilation}
+# Usage
+  -${response.Usage}
+# Contributors
+  -${response.Contributors}
+# Test
+  -${response.Test}
+# Questions
+  _${response.Questions}
+
 `;
 }
 promptUser()
