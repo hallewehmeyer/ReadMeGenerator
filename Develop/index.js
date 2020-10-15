@@ -5,7 +5,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 const writeFileAsync = util.promisify(fs.writeFile);
-
+const generate = require("./generateMarkdown.js");
 function promptUser() {
   return inquirer.prompt([
     
@@ -52,35 +52,10 @@ function promptUser() {
          },
         ]);
       }
-function generateMarkdown(response, data) {
-    return `
-# ${response.title}
 
-# $ Table of Contents
-  -[Description](#description)
-  -[Intstilation](#instilation)
-  -[Usage](#usage)
-  -[Contributors](#contributors)
-  -[Test](#test)
-  -[Questions](#questions)
-# Description
-  -${response.Description}
-# Instilation
-  -${response.Instilation}
-# Usage
-  -${response.Usage}
-# Contributors
-  -${response.Contributors}
-# Test
-  -${response.Test}
-# Questions
-  _${response.Questions}
-
-`;
-}
 promptUser()
   .then(function(response) {
-    const html = generateHTML(response);
+    const md = generate(response);
 
     return writeFileAsync("readme.md", md);
   })
