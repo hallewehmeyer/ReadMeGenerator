@@ -5,14 +5,14 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 const writeFileAsync = util.promisify(fs.writeFile);
-const generate = require("./generateMarkdown.js");
+const generate = require("./Develop/generateMarkdown.js");
 function promptUser() {
   return inquirer.prompt([
     
           {
              type: "input",
              message:"What is the name of your project?",
-             name: "Title"
+             name: "title"
           },
           {
              type: "input",
