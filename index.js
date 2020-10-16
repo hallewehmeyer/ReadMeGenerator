@@ -23,7 +23,7 @@ function promptUser() {
           {
              type: "input",
              message:"How does the user properly launch this app",
-             name: "Instillation"
+             name: "Installation"
           },
           {
              type: "input",
@@ -47,9 +47,14 @@ function promptUser() {
          },
          {
             type: "input",
-            message:"Enter your github username and email if users have any questions regarding this application.",
-            name: "Questions"
+            message:"Enter your github username",
+            name: "Github"
          },
+         {
+            type: "input",
+            message:"Enter your email",
+            name: "Email"
+         }
         ]);
       }
 

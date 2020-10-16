@@ -1,19 +1,17 @@
 // function to generate markdown for README
 
 function generateMarkdown(response) {
+  console.log(response);
+  
   return `# ${response.title}
-  [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/Naereen/)
+  [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+
+
   ### $ Table of Contents
-    -[Description](#description)
-    -[Intstilation](#instilation)
-    -[Usage](#usage)
-    -[Contributors](#contributors)
-    -[Test](#test)
-    -[Questions](#questions)
   ### Description
     -${response.Description}
-  ### Instilation
-    -${response.Instilation}
+  ### Installation
+    -${response.Installation}
   #### Usage
     -${response.Usage}
   #### Contributors
@@ -21,8 +19,9 @@ function generateMarkdown(response) {
   #### Test
     -${response.Test}
   ### Questions?
-  If you have
-    -${response.Questions}
+  -If you have any questions, you can reach me here:
+  -GitHub: <https://github.com/${response.Github}>
+  -Email: <a href="mailto:${response.Email}" target="_blank">${response.Email}</a>
   
 `;
 }
